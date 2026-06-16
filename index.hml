@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — Florestan Fernandes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <span class="badge">Capítulos 5, 6 e 7</span>
+      <h1>A Revolução Burguesa no Brasil</h1>
+      <p class="subtitle">Quiz baseado no texto de Florestan Fernandes</p>
+    </header>
+
+    <!-- Barra de progresso -->
+    <div class="progress-wrapper" id="progress-wrapper" aria-hidden="true">
+      <div class="progress-track">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <span class="progress-text" id="progress-text">Identificação</span>
+    </div>
+
+    <!-- Tela de bloqueio: já respondeu -->
+    <section class="card step active" id="step-blocked">
+      <div class="card-body result-body">
+        <div class="icon" aria-hidden="true">🔒</div>
+        <h2>Você já respondeu este quiz</h2>
+        <p class="lead">Cada participante pode responder apenas uma vez por navegador.</p>
+
+        <div class="score-circle" id="blocked-score-circle">
+          <span class="score-value" id="blocked-score-value">0</span>
+          <span class="score-label">de 5</span>
+        </div>
+
+        <p id="blocked-message"></p>
+
+        <div class="explanations" id="blocked-explanations">
+          <!-- Injetado pelo JS -->
+        </div>
+      </div>
+    </section>
+
+    <form id="quiz-form" novalidate>
+      <!-- Etapa 1: E-mail -->
+      <section class="card step" id="step-email" data-step="1">
+        <div class="card-body">
+          <h2>Antes de começar</h2>
+          <p class="lead">Informe seu e-mail para salvarmos sua participação. Você terá apenas uma tentativa.</p>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seu@email.com"
+              autocomplete="email"
+              required
+            >
+            <span class="error-msg" id="email-error">Insira um e-mail válido.</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-primary" id="btn-start">
+            Começar quiz
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- Perguntas -->
+      <section class="card step" id="step-q1" data-step="2">
+        <div class="card-body">
+          <span class="question-number">Pergunta 1 de 5</span>
+          <h2>Crise do poder oligárquico</h2>
+          <p class="question-text">
+            Segundo Florestan Fernandes, a transição do Império para a República e a chamada <em>“crise do poder oligárquico”</em> representaram:
+          </p>
+          <div class="options" data-question="q1"></div>
+          <span class="error-msg" id="q1-error">Escolha uma alternativa para continuar.</span>
+        </div>
+        <div class="card-footer card-footer--split">
+          <button type="button" class="btn btn-ghost btn-prev">Voltar</button>
+          <button type="button" class="btn btn-primary btn-next">Próxima</button>
+        </div>
+      </section>
+
+      <section class="card step" id="step-q2" data-step="3">
+        <div class="card-body">
+          <span class="question-number">Pergunta 2 de 5</span>
+          <h2>A burguesia brasileira e o Estado</h2>
+          <p class="question-text">
+            Em relação às demais burguesias, a burguesia brasileira se diferenciou porque:
+          </p>
+          <div class="options" data-question="q2"></div>
+          <span class="error-msg" id="q2-error">Escolha uma alternativa para continuar.</span>
+        </div>
+        <div class="card-footer card-footer--split">
+          <button type="button" class="btn btn-ghost btn-prev">Voltar</button>
+          <button type="button" class="btn btn-primary btn-next">Próxima</button>
+        </div>
+      </section>
+
+      <section class="card step" id="step-q3" data-step="4">
+        <div class="card-body">
+          <span class="question-number">Pergunta 3 de 5</span>
+          <h2>Capitalismo dependente</h2>
+          <p class="question-text">
+            Para Florestan Fernandes, o capitalismo dependente no Brasil foi:
+          </p>
+          <div class="options" data-question="q3"></div>
+          <span class="error-msg" id="q3-error">Escolha uma alternativa para continuar.</span>
+        </div>
+        <div class="card-footer card-footer--split">
+          <button type="button" class="btn btn-ghost btn-prev">Voltar</button>
+          <button type="button" class="btn btn-primary btn-next">Próxima</button>
+        </div>
+      </section>
+
+      <section class="card step" id="step-q4" data-step="5">
+        <div class="card-body">
+          <span class="question-number">Pergunta 4 de 5</span>
+          <h2>Modelo autocrático-burguês</h2>
+          <p class="question-text">
+            Segundo o autor, nos países periféricos de economia capitalista dependente, a transformação capitalista tende a se associar:
+          </p>
+          <div class="options" data-question="q4"></div>
+          <span class="error-msg" id="q4-error">Escolha uma alternativa para continuar.</span>
+        </div>
+        <div class="card-footer card-footer--split">
+          <button type="button" class="btn btn-ghost btn-prev">Voltar</button>
+          <button type="button" class="btn btn-primary btn-next">Próxima</button>
+        </div>
+      </section>
+
+      <section class="card step" id="step-q5" data-step="6">
+        <div class="card-body">
+          <span class="question-number">Pergunta 5 de 5</span>
+          <h2>Espírito modernizador moderado</h2>
+          <p class="question-text">
+            Florestan Fernandes caracteriza a burguesia brasileira do fim do Império e início da República como:
+          </p>
+          <div class="options" data-question="q5"></div>
+          <span class="error-msg" id="q5-error">Escolha uma alternativa para continuar.</span>
+        </div>
+        <div class="card-footer card-footer--split">
+          <button type="button" class="btn btn-ghost btn-prev">Voltar</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit">Enviar respostas</button>
+        </div>
+      </section>
+    </form>
+
+    <!-- Resultado -->
+    <section class="card step" id="step-result" data-step="7">
+      <div class="card-body result-body">
+        <div class="score-circle" id="score-circle">
+          <span class="score-value" id="score-value">0</span>
+          <span class="score-label">de 5</span>
+        </div>
+
+        <h2 id="result-title">Resultado</h2>
+        <p id="result-message"></p>
+
+        <div class="explanations" id="explanations">
+          <!-- Injetado pelo JS -->
+        </div>
+
+        <p class="save-status" id="save-status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
