@@ -18,7 +18,7 @@
     </header>
 
     <!-- Barra de progresso -->
-    <div class="progress-wrapper" id="progress-wrapper" aria-hidden="true">
+    <div class="progress-wrapper visible" id="progress-wrapper" aria-hidden="true">
       <div class="progress-track">
         <div class="progress-bar" id="progress-bar"></div>
       </div>
@@ -26,11 +26,11 @@
     </div>
 
     <!-- Tela de bloqueio: já respondeu -->
-    <section class="card step active" id="step-blocked">
+    <section class="card step" id="step-blocked">
       <div class="card-body result-body">
         <div class="icon" aria-hidden="true">🔒</div>
         <h2>Você já respondeu este quiz</h2>
-        <p class="lead">Cada participante pode responder apenas uma vez por navegador.</p>
+        <p class="lead">Cada participante pode responder apenas uma vez.</p>
 
         <div class="score-circle" id="blocked-score-circle">
           <span class="score-value" id="blocked-score-value">0</span>
@@ -39,18 +39,16 @@
 
         <p id="blocked-message"></p>
 
-        <div class="explanations" id="blocked-explanations">
-          <!-- Injetado pelo JS -->
-        </div>
+        <div class="explanations" id="blocked-explanations"></div>
       </div>
     </section>
 
     <form id="quiz-form" novalidate>
       <!-- Etapa 1: E-mail -->
-      <section class="card step" id="step-email" data-step="1">
+      <section class="card step active" id="step-email" data-step="1">
         <div class="card-body">
           <h2>Antes de começar</h2>
-          <p class="lead">Informe seu e-mail para salvarmos sua participação. Você terá apenas uma tentativa.</p>
+          <p class="lead">Informe seu e-mail para começar. Você terá apenas uma tentativa.</p>
 
           <div class="field">
             <label for="email">E-mail</label>
@@ -166,11 +164,9 @@
         <h2 id="result-title">Resultado</h2>
         <p id="result-message"></p>
 
-        <div class="explanations" id="explanations">
-          <!-- Injetado pelo JS -->
-        </div>
+        <div class="explanations" id="explanations"></div>
 
-        <p class="save-status" id="save-status" aria-live="polite"></p>
+        <p class="save-status" id="save-status">Respostas salvas neste navegador.</p>
       </div>
     </section>
   </main>
