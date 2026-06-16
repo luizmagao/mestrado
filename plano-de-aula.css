@@ -1,0 +1,291 @@
+/* Estilos específicos da página "Plano de Aula" — reaproveita as variáveis de style.css */
+
+body.doc-body {
+  align-items: flex-start;
+  padding: 40px 24px 80px;
+}
+
+.doc {
+  max-width: 880px;
+  width: 100%;
+}
+
+/* Navegação superior */
+.doc-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Sumário */
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.toc a {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.toc a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Cartões de conteúdo (sempre visíveis, ao contrário dos .step do quiz) */
+.card.doc-card {
+  display: block;
+  animation: none;
+  margin-bottom: 20px;
+  scroll-margin-top: 16px;
+}
+
+.doc-card .card-body {
+  padding: 36px 40px;
+}
+
+.doc-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--primary-light);
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doc-card h2 .step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.doc-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 22px 0 10px;
+  color: var(--text);
+}
+
+.doc-card h3:first-of-type {
+  margin-top: 4px;
+}
+
+.doc-card p {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.doc-card ul,
+.doc-card ol {
+  margin: 0 0 16px 0;
+  padding-left: 22px;
+}
+
+.doc-card li {
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.doc-card li::marker {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Tabela de identificação */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 4px;
+}
+
+.info-table th,
+.info-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  vertical-align: top;
+}
+
+.info-table th {
+  width: 200px;
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.info-table tr:last-child th,
+.info-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Tabela de cronograma */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+}
+
+.schedule-table th {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 700;
+}
+
+.schedule-table th:first-child,
+.schedule-table td:first-child {
+  width: 30px;
+  text-align: center;
+}
+
+.schedule-table th:last-child,
+.schedule-table td:last-child {
+  width: 90px;
+  white-space: nowrap;
+}
+
+.schedule-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+.schedule-table tfoot td {
+  font-weight: 700;
+  color: var(--primary-dark);
+  border-top: 2px solid var(--border);
+  border-bottom: none;
+}
+
+/* Cartões de conceitos-chave */
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  margin: 10px 0 8px;
+}
+
+.concept-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.concept-card h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+
+.concept-card p {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* Aviso/destaque */
+.callout {
+  background: var(--primary-light);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 8px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.callout p {
+  margin: 0;
+  color: var(--primary-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.callout .btn-primary {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  background: var(--success-bg);
+  color: var(--success);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.doc-footer {
+  text-align: center;
+  margin-top: 28px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .doc-card .card-body {
+    padding: 24px;
+  }
+
+  .info-table th {
+    width: 120px;
+  }
+
+  .schedule-table {
+    font-size: 0.85rem;
+  }
+}
