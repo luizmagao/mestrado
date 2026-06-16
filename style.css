@@ -213,6 +213,26 @@ input[type="email"].invalid:focus {
   display: block;
 }
 
+/* Link auxiliar */
+.helper-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--primary-light);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.helper-link:hover {
+  background: #bfdbfe;
+  transform: translateY(-1px);
+}
+
 /* Perguntas */
 .question-number {
   display: inline-block;
